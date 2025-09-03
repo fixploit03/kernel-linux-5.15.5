@@ -1,7 +1,7 @@
 ## Cara Instal
 
 > [!IMPORTANT]
-> Pastikan Anda sudah menginstal driver untuk adapter Wi-Fi TP-LINK TL-WN722N V2/V3 menggunakan DKMS. Jika belum, silakan instal dengan perintah berikut:
+> Pastikan Anda telah menginstal driver untuk adapter Wi-Fi TP-LINK TL-WN722N V2/V3 menggunakan DKMS. Jika belum, silakan jalankan perintah berikut. Jika sudah, langkah ini dapat dilewati.
 
 ## 1. Instal Driver Menggunakan DKMS
 
@@ -42,7 +42,8 @@
    sudo ./dkms-install.sh
    ```
 
-Apabila driver sudah berhasil diinstal, atau sebelumnya telah terinstal, silakan jalankan perintah berikut:
+> [!IMPORTANT]
+> Apabila driver sudah berhasil diinstal, atau sebelumnya telah terinstal, silakan jalankan perintah berikut:
 
 ## 2. Instal Kernel Linux 5.15.5
 
@@ -69,3 +70,8 @@ Apabila driver sudah berhasil diinstal, atau sebelumnya telah terinstal, silakan
    ```
    sudo ./instal_kernel_linux_5.15.5.sh
    ```
+
+
+> [!NOTE]  
+> Untuk informasi selengkapnya, silakan lihat tutorial video berikut:  
+> [https://youtu.be/5qAqG-FzZiQ?si=XzQluGK-IDR0Oetv](https://youtu.be/5qAqG-FzZiQ?si=XzQluGK-IDR0Oetv)
