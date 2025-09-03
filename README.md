@@ -13,6 +13,12 @@ Berdasarkan uji coba, kernel Linux versi 5.15.5 lebih kompatibel dengan chipset 
 - Kali Linux 2025.3
 - Parrot OS 6.4
 
+## Screenshot
+
+#### 1. Kali Linux 2025.3
+![](https://github.com/fixploit03/kernel-linux-5.15.5/blob/main/kali%20linux.png)
+#### 2. Parrot OS 6.4
+![](https://github.com/fixploit03/kernel-linux-5.15.5/blob/main/parrot%20os.png)
 ## Cara Instal
 Untuk cara instalnya ada disini: [https://github.com/fixploit03/kernel-linux-5.15.5/blob/main/INSTAL](https://github.com/fixploit03/kernel-linux-5.15.5/blob/main/INSTAL)
 
