@@ -1,5 +1,7 @@
 ## 🤔 Tentang
 
+![](https://github.com/fixploit03/kernel-linux-5.15.5/blob/main/TP-LINK%20TL-WN722N.jpg)
+
 Script Bash untuk menginstal kernel Linux versi `5.15.5` di [Kali Linux](https://www.kali.org/). 
 
 Script ini dibuat untuk memperbaiki masalah pada adapter Wi-Fi [TP-LINK TL-WN722N V2/V3](https://www.tp-link.com/id/support/download/tl-wn722n/), terutama saat scanning jaringan Wi-Fi ([airodump-ng](https://www.aircrack-ng.org/doku.php?id=airodump-ng) tidak menampilkan target) dan masalah saat mengembalikan mode interface dari Monitor ke Managed.
