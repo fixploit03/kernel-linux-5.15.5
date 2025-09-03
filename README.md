@@ -25,10 +25,5 @@ Berdasarkan uji coba, kernel Linux versi 5.15.5 lebih kompatibel dengan chipset 
 ## 🧑‍🔧 Cara Instal
 Untuk cara instalnya ada disini: [https://github.com/fixploit03/kernel-linux-5.15.5/blob/main/INSTAL](https://github.com/fixploit03/kernel-linux-5.15.5/blob/main/INSTAL)
 
-## 👨‍🏫 Tutorial 
-Untuk video tutorialnya ada di channel YouTube saya.
-
-Link: [https://youtu.be/5qAqG-FzZiQ?si=BseYlr0t2X6QSFd2](https://youtu.be/5qAqG-FzZiQ?si=BseYlr0t2X6QSFd2)
-
 ## 📜 Lisensi
 Script ini dilisensikan dibawah lisensi [MIT](https://github.com/fixploit03/kernel-linux-5.15.5/blob/main/LICENSE)
