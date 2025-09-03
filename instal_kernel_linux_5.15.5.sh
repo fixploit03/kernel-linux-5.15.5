@@ -4,6 +4,7 @@
 # + Script Bash untuk menginstal kernel Linux versi 5.15.5 di Kali Linux
 # + Dibuat oleh: Rofi (Fixploit03)
 # + Lisensi: MIT
+# + GitHub: https://github.com/fixploit03/kernel-linux-5.15.5
 #
 # DISCLAIMER:
 # -----------
