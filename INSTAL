@@ -1,0 +1,8 @@
+Cara Instal:
+------------
+1. sudo apt-get update
+2. sudo apt-get install git
+3. git clone https://github.com/fixploit03/kernel-linux-5.15.5
+4. cd kernel-linux-5.15.5
+5. chmod +x instal_kernel_linux_5.15.5.sh
+6. ./instal_kernel_linux_5.15.5.sh
