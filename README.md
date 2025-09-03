@@ -1,3 +1,5 @@
+![](https://github.com/fixploit03/kernel-linux-5.15.5/blob/main/img.jpg)
+
 ## Tentang
 Script Bash untuk menginstal kernel Linux versi 5.15.5 di Kali Linux. Script ini dibuat untuk memperbaiki masalah pada adapter Wi-Fi TP-LINK TL-WN722N V2/V3, terutama saat scanning jaringan Wi-Fi (airodump-ng tidak menampilkan target) dan masalah saat mengembalikan mode interface dari Monitor ke Managed.
 
