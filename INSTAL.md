@@ -36,7 +36,7 @@
    echo 'blacklist r8188eu' | sudo tee -a /etc/modprobe.d/realtek.conf
    ```
 
-6. Install via DKMS
+6. Install via DKMS:
 
    ```
    sudo ./dkms-install.sh
