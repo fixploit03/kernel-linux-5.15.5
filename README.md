@@ -9,6 +9,10 @@ Berdasarkan uji coba, kernel Linux versi 5.15.5 lebih kompatibel dengan chipset 
 
 > Script ini GRATIS (Open Source) dan tidak untuk diperjualbelikan.
 
+## Telah Diuji Coba di:
+- Kali Linux 2025.3
+- Parrot OS 6.4
+
 ## Cara Instal
 Untuk cara instalnya ada disini: [https://github.com/fixploit03/kernel-linux-5.15.5/blob/main/INSTAL](https://github.com/fixploit03/kernel-linux-5.15.5/blob/main/INSTAL)
 
