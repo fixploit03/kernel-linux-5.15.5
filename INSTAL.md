@@ -43,7 +43,7 @@
    ```
 
 > [!IMPORTANT]
-> Apabila driver sudah berhasil diinstal, atau sebelumnya telah terinstal, silakan jalankan perintah berikut:
+> Jika driver sudah berhasil diinstal, silakan jalankan perintah berikut:
 
 ## 2. Instal Kernel Linux 5.15.5
 
