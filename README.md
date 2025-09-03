@@ -23,7 +23,7 @@ Berdasarkan uji coba, kernel Linux versi 5.15.5 lebih kompatibel dengan chipset 
 ![](https://github.com/fixploit03/kernel-linux-5.15.5/blob/main/parrot%20os.png)
 
 ## 🧑‍🔧 Cara Instal
-Untuk cara instalnya ada disini: [https://github.com/fixploit03/kernel-linux-5.15.5/blob/main/INSTAL](https://github.com/fixploit03/kernel-linux-5.15.5/blob/main/INSTAL)
+Untuk cara instalnya ada disini: [https://github.com/fixploit03/kernel-linux-5.15.5/blob/main/INSTAL.md](https://github.com/fixploit03/kernel-linux-5.15.5/blob/main/INSTAL.md)
 
 ## 📜 Lisensi
 Script ini dilisensikan dibawah lisensi [MIT](https://github.com/fixploit03/kernel-linux-5.15.5/blob/main/LICENSE)
