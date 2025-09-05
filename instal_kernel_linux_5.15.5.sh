@@ -6,117 +6,34 @@
 # + Lisensi: MIT
 # + GitHub: https://github.com/fixploit03/kernel-linux-5.15.5
 #
+# DISCLAIMER:
+# -----------
+# Script ini dibuat untuk memperbaiki masalah pada adapter Wi-Fi TP-LINK TL-WN722N V2/V3,
+# terutama saat scanning jaringan Wi-Fi (airodump-ng tidak menampilkan target)
+# dan masalah saat mengembalikan mode interface dari Monitor ke Managed.
+#
+# Berdasarkan uji coba, kernel Linux versi 5.15.5 lebih kompatibel dengan chipset Realtek RTL8188EUS
+# yang digunakan di adapter TP-LINK TL-WN722N V2/V3.
+#
+# PERINGATAN!
+# -----------
+# Script ini GRATIS (Open Source) dan tidak untuk diperjualbelikan.
+#
 #-----------------------------------------------------------------------------------------------------
 
-# Pastikan dialog ada
-if ! command -v dialog &> /dev/null; then
-    echo "[-] dialog belum terinstal. Install dulu dengan: sudo apt install dialog"
-    exit 1
-fi
+# Variabel warna
+m="\e[1;31m"   # Merah
+h="\e[1;32m"   # Hijau
+b="\e[1;34m"   # Biru
+p="\e[1;37m"   # Putih
+r="\e[0m"      # Reset
+ib=$'\e[1;34m' # Input read Biru
+ip=$'\e[1;37m' # Input read Putih
 
-# Cek apakah root
+# Cek apakah script dijalankan sebagai root apa kaga
 if [[ $EUID -ne 0 ]]; then
-    dialog --title "ERROR" --msgbox "Script ini harus dijalankan sebagai root!\n\nCoba: sudo bash $0" 10 50
-    exit 1
-fi
-
-# Banner awal
-dialog --title "Installer Kernel Linux 5.15.5" --msgbox "\
-Script ini dibuat untuk memperbaiki masalah Wi-Fi TP-LINK TL-WN722N V2/V3.\n\
-Kernel Linux versi 5.15.5 lebih kompatibel dengan chipset Realtek RTL8188EUS.\n\n\
-Dibuat oleh: Rofi (Fixploit03)\nLisensi: MIT" 15 60
-
-# Tanya mau instal atau tidak
-dialog --title "Konfirmasi" --yesno "Apakah Anda ingin menginstal kernel Linux versi 5.15.5?" 8 60
-jawab=$?
-if [[ $jawab -ne 0 ]]; then
-    dialog --title "Keluar" --msgbox "Proses dibatalkan." 6 40
-    clear
-    exit 0
-fi
-
-# Cek apakah kernel sudah terinstal
-dialog --infobox "Mengecek kernel Linux 5.15.5..." 5 40
-sleep 2
-if dpkg -l | grep -q "linux-image-unsigned-5.15.5"; then
-    dialog --title "Info" --msgbox "Kernel Linux versi 5.15.5 sudah terinstal.\nProses instalasi dibatalkan." 8 50
-    clear
-    exit 0
-fi
-
-# Cek koneksi internet
-dialog --infobox "Mengecek koneksi internet..." 5 40
-sleep 2
-if ! ping -c 1 8.8.8.8 &> /dev/null; then
-    dialog --title "ERROR" --msgbox "Tidak ada koneksi internet!\nPastikan koneksi aktif untuk melanjutkan." 8 50
-    clear
-    exit 1
-fi
-
-# File DEB kernel
-file_deb=(
-    "http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb"
-    "https://kernel.ubuntu.com/mainline/v5.15.5/amd64/linux-image-unsigned-5.15.5-051505-generic_5.15.5-051505.202111250933_amd64.deb"
-    "https://kernel.ubuntu.com/mainline/v5.15.5/amd64/linux-modules-5.15.5-051505-generic_5.15.5-051505.202111250933_amd64.deb"
-    "https://kernel.ubuntu.com/mainline/v5.15.5/amd64/linux-headers-5.15.5-051505_5.15.5-051505.202111250933_all.deb"
-    "https://kernel.ubuntu.com/mainline/v5.15.5/amd64/linux-headers-5.15.5-051505-generic_5.15.5-051505.202111250933_amd64.deb"
-)
-
-# Download file DEB
-(
-    i=0
-    for url in "${file_deb[@]}"; do
-        i=$((i+1))
-        nama_file=$(basename "$url")
-        echo "XXX"
-        echo "$((i*20))"
-        echo "Mendownload: $nama_file"
-        echo "XXX"
-        wget -q --show-progress "$url"
-    done
-) | dialog --title "Download File DEB" --gauge "Sedang mendownload file..." 10 60 0
-
-# Instalasi file DEB
-dialog --infobox "Menginstal kernel Linux 5.15.5..." 5 50
-sleep 2
-if ! dpkg -i *.deb; then
-    apt --fix-broken install -y
-    dpkg -i *.deb || {
-        dialog --title "ERROR" --msgbox "Instalasi kernel gagal.\nSilakan cek manual." 8 50
-        clear
-        exit 1
-    }
-fi
-
-dialog --title "Sukses" --msgbox "Kernel Linux 5.15.5 berhasil diinstal." 8 50
-
-# Update GRUB
-dialog --infobox "Memperbarui konfigurasi GRUB..." 5 50
-sleep 2
-update-grub || {
-    dialog --title "ERROR" --msgbox "Gagal memperbarui GRUB." 6 40
-    clear
-    exit 1
-}
-
-# Load driver WiFi
-dialog --infobox "Memuat driver WiFi 8188eu..." 5 50
-sleep 2
-if ! modprobe 8188eu; then
-    dialog --title "ERROR" --msgbox "Gagal memuat driver 8188eu.\nCoba reboot lalu jalankan manual: modprobe 8188eu" 8 60
-    clear
-    exit 1
-fi
-
-# Tanya reboot
-dialog --title "Reboot" --yesno "Apakah Anda ingin me-reboot sistem sekarang?" 7 50
-if [[ $? -eq 0 ]]; then
-    reboot
-else
-    dialog --title "Selesai" --msgbox "Instalasi selesai tanpa reboot.\nReboot manual agar kernel aktif." 8 60
-    clear
-    exit 0
-fi
+        echo -e "${m}[-] ${p}Script ini harus dijalankan sebagai root.${r}"
+        echo -e "${b}[*] ${p}Jalankan menggunakan perintah ini: '${h}sudo bash $0'${r}"
         exit 1
 fi
 
